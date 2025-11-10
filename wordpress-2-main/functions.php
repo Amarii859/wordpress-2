@@ -1,23 +1,31 @@
 <?php
-
-function add_theme_scripts(){
-
-    wp_enqueue_style('style', get_stylesheet_url());
-    wp_enqueue_style('style', get_template_directory_url(). 'style.css' , array() , '1.1' , 'all');
-    wp_enqueue_style('main', get_template_directory_url(). '/js/main.js' , array("jquery") , 1.1 , true);
-
-    if(is_singular() && coments_open() && get_option('thread_comment')){
-        wp_equeue_script('comment-reply');
-    }
-
+function ds_style() {
+    wp_enqueue_style( 'digitalschool-style', get_stylesheet_uri());
 }
-add_action('wp_equeue_scripts' , 'add_theme_scripts');
+add_action('wp_enqueue_scripts' , 'ds_style');
 
-function ds_setup(){
-    add_theme_support('menus');
-    register_nav_menu('Primary' , 'Primary Navigation');
+
+function digitalschool_setup() {
+    register_nav_menus(array(
+        'primary' => 'Primary Menu',
+    ) ); 
+    
 }
-add_action('init', 'ds_setup')
+
+ add_action('after_setup_theme' , 'digitalschool_setup');
+
+ function ds_js(){
+    wp_enqueue_script('ds-js' , get_theme_file_uri('js/main.js'), array(), 1.0 , true );
+
+ }
+ add_action ('wp_enqueue_scripts', 'ds_js');
 
 
-?>
+
+ add_action('after_setup_theme' , function (){
+    add_theme_support( 'post-thumbnails' );
+    add_image_size('team_avatar' , 500 ,500);
+ });
+
+
+ ?>

@@ -1,35 +1,16 @@
-<?php  
-get_header();
-?>
-<h1>kjo eshte header</h1>
+<?php get_header(); ?>
 
 
-<?php 
-
-if (have_posts()):
-    while (have_posts()): the_post(); ?>
-
-        <h1><?php the_title(); ?></h1>
-        <small>
-            Posted on: <?php the_time('F j, Y'); ?> at <?php the_time('g:i a'); ?> in <?php the_category(', '); ?>
-        </small>
-        <?php the_content(); ?>
-
-    <?php  
-    endwhile; 
-endif; 
-?>
+<main>
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+      <h2><?php the_title(); ?></h2>
+      <?php the_content(); ?>
+<?php endwhile; else: ?>
+     <p>no posts found.</p>
+     <?php endif; ?>
+</main>
+<?php get_footer(); ?>
 
 
 
-    
-</small>
-
-
-
-
-<?php  
-get_footer();
-?>
-<h1>kjo eshte footer</h1>
 
