@@ -1,10 +1,16 @@
-/*
-Theme Name: amaR
-Author: Amar Buzoku
-Description:  The Digital School Blog Theme is a modern, responsive, and user-friendly WordPress theme designed specifically for showcasing educational content, updates, and student achievements from Digital School. Built with clean and minimal design principles, this theme ensures an engaging reading experience while keeping the focus on content.
-Version: 1.0
-Tags: cool, blue, mobile ready, school, digital
-*/
+    /*
+    Theme Name: Theme i cimes
+    Theme URI: https://sq.wikipedia.org/wiki/Rasim_Tha%C3%A7i
+    Author: Cima
+    Author URI: https://sq.wikipedia.org/wiki/Rasim_Tha%C3%A7i
+    Description: Cima Yes of course
+    Version: 1.0
+    License: GNU General Public License v2 or later
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Text Domain: my-awesome-theme
+    Tags: custom, blog, responsive
+    */
+
 
 .team-grid{
   list-style:none; margin:0; padding:0;
